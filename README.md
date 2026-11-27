@@ -60,6 +60,23 @@ npx expo start --tunnel
 
 Lần đầu chạy tunnel, Expo có thể hỏi cài `@expo/ngrok`; đồng ý để tiếp tục.
 
+### Lưu ý riêng cho iPhone (Expo Go)
+
+Trên **iPhone thật**, Expo Go bắt buộc máy tính và điện thoại đăng nhập **cùng một tài khoản Expo** thì mới mở được project:
+
+1. Tạo tài khoản miễn phí tại [expo.dev/signup](https://expo.dev/signup) nếu chưa có.
+2. Trên máy tính, đăng nhập Expo CLI:
+
+   ```powershell
+   npx expo login
+   npx expo whoami
+   ```
+
+3. Trong Expo Go trên iPhone: chạm **icon tài khoản** ở góc phải → đăng nhập cùng tài khoản.
+4. Quay lại màn hình lỗi và bấm **Try Again**.
+
+Nếu vừa đổi tài khoản, khởi động lại `npx expo start`. Lỗi này chỉ xảy ra với **iPhone thật**; Android, emulator và simulator không bị ảnh hưởng.
+
 ### Chạy trên emulator / web (tùy chọn)
 
 ```powershell
@@ -115,6 +132,7 @@ Kịch bản kiểm thử thủ công: xem [`docs/TEST_CASES.md`](docs/TEST_CASE
 | Hiện tượng | Cách xử lý |
 |---|---|
 | `Project is incompatible with this version of Expo Go` | Cập nhật Expo Go lên bản hỗ trợ SDK 58, hoặc cài đúng bản Expo Go cho SDK 58 |
+| iPhone báo `You need to be signed in to Expo Go and Expo CLI...` | Chạy `npx expo login` trên máy tính và đăng nhập cùng tài khoản trong Expo Go, rồi bấm **Try Again** |
 | Quét QR nhưng không tải được | Cùng Wi-Fi, tắt VPN, mở firewall cho Node.js, thử `npx expo start --tunnel` |
 | `Unable to resolve module ...` | `Remove-Item -Recurse -Force node_modules` → `npm install` → `npx expo start -c` |
 | Cổng 8081 bị chiếm | `npx expo start --port 8082` |
