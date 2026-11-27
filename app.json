@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "hello-mobile-mvp-v1.0",
-    "slug": "hello-mobile-mvp-v1.0",
+    "name": "Hello Mobile MVP",
+    "slug": "hello-mobile-mvp",
+    "description": "MVP nhập tên và nhận lời chào, xây dựng bằng Expo + React Native.",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
